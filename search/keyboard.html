@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<!-- jQuery UI theme or Bootstrap (optional, if you create a custom theme) -->
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<!--<link href="node_modules/virtual-keyboard/dist/css/bootstrap.min.css" rel="stylesheet">-->
+<!-- jQuery UI position utility (optional, if you position the keyboard yourself) -->
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<!-- keyboard widget css & script -->
+<link href="node_modules/virtual-keyboard/dist/css/keyboard.min.css" rel="stylesheet">
+<script src="node_modules/virtual-keyboard/dist/js/jquery.keyboard.js"></script>
+<!-- css for the preview keyset extension -->
+<link href="node_modules/virtual-keyboard/dist/css/keyboard-previewkeyset.min.css" rel="stylesheet">
+<!-- keyboard optional extensions - include ALL (includes mousewheel) -->
+<script src="node_modules/virtual-keyboard/dist/js/jquery.keyboard.extension-all.min.js"></script>
+<!-- or include individual extensions, as desired -->
+<!--
+<script src="js/jquery.mousewheel.js"></script>
+<script src="js/jquery.keyboard.extension-altkeypopup.js"></script>
+<script src="js/jquery.keyboard.extension-autocomplete.js"></script>
+<script src="js/jquery.keyboard.extension-caret.js"></script>
+<script src="js/jquery.keyboard.extension-extender.js"></script>
+<script src="js/jquery.keyboard.extension-mobile.js"></script>
+<script src="js/jquery.keyboard.extension-navigation.js"></script>
+<script src="js/jquery.keyboard.extension-previewkeyset.js"></script>
+<script src="js/jquery.keyboard.extension-scramble.js"></script>
+<script src="js/jquery.keyboard.extension-typing.js"></script>
+-->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="node_modules/virtual-keyboard/dist/js/jquery.keyboard.js"></script>
+</head>
+<body>
+
+<!-- start nav -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+        WELCOME WALLS
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- end nav -->
+
+
+
+
+  <!--  <form align="center">
+    	<input type="image" src="" onclick="rockPick()" name="rock" width="200">
+
+    	<input type="image" src="" onclick="paperPick()" name="paper" width="150">
+
+    	<input type="image" src="" onclick="scissorsPick()" name="scissors" width="200">
+    </form>-->
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="page-header">
+                <h1>Find Panel</h1>
+            <h3>Search using, name, ship or year.</h3>
+            <!--<p>You can find the source of this plugin at <a href="http://github.com/stidges/jquery-searchable" target="_blank">Github</a> (http://github.com/stidges/jquery-searchable)!</p>-->
+            </div>
+       
+
+
+   
+
+     <input type="search" id="search" value="" class=" keyboard form-control" autocomplete="off" placeholder="Type to start searching">
+<hr>
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      View Site Map
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Map below</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+        <div class="col-lg-12">
+            <h3>Map below</h3>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-lg-12">
+           *picture a map*
+           
+        </div>
+    </div>
+
+  
+          </div>
+          <div class="modal-footer">
+         
+            <button type="button" class="btn btn-default btn-success btn-large" data-dismiss="modal">Close</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="col-lg-8">
+
+
+
+
+
+    <table class="table" id="table">
+<thead><tr><th>Names</th><th>Arrival Year</th><th>Ship Name</th><th>Panel #</th></tr></thead><tbody>
+ <tr><td>AARTS, Jan & Martha C</td><td>1952</td><td>JOHAN VAN OLDENBARNEVELT</td><td>423</td></tr>
+ <tr><td>ABATE, MARIA (FAVARO)</td><td>1955</td><td>OCEANIA</td><td>107</td></tr>
+ <tr><td>ABATE, Vincenzo & Iolanda</td><td>1955</td><td>OCEANIA</td><td>106</td></tr>
+ <tr><td>ABBE, B, J & Family</td><td>1955</td><td>JOHAN VAN OLDENBARNEVELT</td><td>269</td></tr>
+ <tr><td>ABBONDANZA, Luigi</td><td>1957</td><td>AUSTRALIA</td><td>362</td></tr>
+ <tr><td>ABBONDANZA, Maria</td><td>1958</td><td>AUSTRALIA</td><td>362</td></tr>
+ <tr><td>ABBONDANZA, Remo & Eva</td><td>1958</td><td>AUSTRALIA</td><td>362</td></tr>
+ <tr><td>ABBONIZIO, Antonio</td><td>1955</td><td>ROMA</td><td>366</td></tr>
+ <tr><td>ABBONIZIO, Assunta</td><td>1961</td><td>OCEANIA</td><td>366</td></tr>
+ <tr><td>ABBONIZIO, Francesca Rita</td><td>1968</td><td>GUGLIELMO MARCONI</td><td>485</td></tr>
+ <tr><td>ABBONIZIO, Giuseppe</td><td>1955</td><td>NEPTUNIA</td><td>64</td></tr>
+ <tr><td>ABBONIZIO, Stefano</td><td>1956</td><td>CASTEL BIANCO</td><td>485</td></tr>
+ <tr><td>ABBONIZIO, Timiti Dina</td><td>1968</td><td>GUGLIELMO MARCONI</td><td>485</td></tr>
+ <tr><td>ABBOTT Family</td><td>1964</td><td>ELLINIS</td><td>50</td></tr>
+ <tr><td>ABBOTT, Harry Frans</td><td>1928</td><td>BELTANA</td><td>ALBANY</td></tr>
+ <tr><td>ABBOTT, John, Maud & Family</td><td>1953</td><td>ORONSAY</td><td>417</td></tr>
+ <tr><td>ABBOTT, N, S & Natalie</td><td>1971</td><td>BRITANIS</td><td>127</td></tr>
+ <tr><td>ABBOTT, Ralph, Nita & Family</td><td>1968</td><td>AURELIA</td><td>466</td></tr>
+ <tr><td>ABBOTT, Sidney</td><td>1923</td><td>ORSOVA</td><td>407</td></tr>
+ <tr><td>ABBRUZZESE, Antonio</td><td>1961</td><td>NEPTUNIA</td><td>362</td></tr>
+ <tr><td>ABBRUZZESE, Maria G</td><td>1963</td><td>OCEANIA</td><td>362</td></tr>
+ <tr><td>ABELHA, Alfredo Fernandes</td><td>1952</td><td>NORTH CAPE</td><td>224</td></tr>
+ <tr><td>ABELHA, Teresa Bernardo</td><td>1963</td><td>ORIANA</td><td>224</td></tr>
+ <tr><td>ABELL, Clive & Carol</td><td>1973</td><td>AUSTRALIS</td><td>24</td></tr>
+ <tr><td>ABELL, RS, JC & Malcolm</td><td>1971</td><td>ARCADIA</td><td>289</td></tr>
+ <tr><td>ABERCROMBY, Robert Ralph</td><td>1906</td><td>ORUBA</td><td>88</td></tr>
+ <tr><td>ABERNETHY, F & RC</td><td>1961</td><td>FAIRSKY</td><td>180</td></tr>
+ <tr><td>ABETZ, W, I & Family</td><td>1961</td><td>CASTEL FELICE</td><td>396</td></tr>
+ <tr><td>ABLETT, Peter & Ann</td><td>1976</td><td>AUSTRALIS</td><td>475</td></tr>
+ <tr><td>ABOLAFIO, Emilia Maria</td><td>1951</td><td>STRATHAIRD</td><td>490</td></tr>
+ <tr><td>ABRAHAM Family</td><td>1909</td><td>ORSOVA</td><td>353</td></tr>
+ <tr><td>ABRAHAMS, Harry, Jo & Family</td><td>1963</td><td>ORSOVA</td><td>241</td></tr>
+ <tr><td>ABRAHAMSOHN, Betty</td><td>1939</td><td>ORAMA</td><td>226</td></tr>
+ <tr><td>ABRUGIATO, Francesco</td><td>1952</td><td>ORONTES</td><td>382</td></tr>
+ <tr><td>ABRUGIATO, Sebastiana</td><td>1953</td><td>OCEANIA</td><td>382</td></tr>
+ <tr><td>ABRUSCI, Leonardo</td><td>1952</td><td>NEPTUNIA</td><td>165</td></tr>
+ <tr><td>ABURROW, Colin J</td><td>1965</td><td>HMS ARK ROYAL</td><td>106</td></tr>
+ <tr><td>ACALINOVICH Family</td><td>1948</td><td>NAPOLI</td><td>36</td></tr>
+ <tr><td>ACASON, George & Rosalyn</td><td>1973</td><td>GALILEO GALILEI</td><td>140</td></tr>
+ <tr><td>ACASTER, Phil & Maureen</td><td>1968</td><td>FAIRSEA</td><td>214</td></tr>
+ <tr><td>ACKRILL, Walter & Alice</td><td>1969</td><td>ELLINIS</td><td>195</td></tr>
+ <tr><td>ACKROYD, Barry</td><td>1971</td><td>BRITANIS</td><td>148</td></tr>
+ <tr><td>ACKROYD, Florence (COE)</td><td>1951</td><td>CHITRAL</td><td>368</td></tr>
+ <tr><td>ACKROYD, JAN & JA</td><td>1974</td><td>ELLINIS</td><td>203</td></tr>
+ <tr><td>ACKROYD, Joseph</td><td>1950</td><td>CAMERONIA</td><td>368</td></tr>
+ <tr><td>ACKROYD, Joshua & Mary</td><td>1955</td><td>ESPERANCE BAY</td><td>11</td></tr>
+ <tr><td>ACKROYD, Mary Christine</td><td>1955</td><td>ESPERANCE BAY</td><td>213</td></tr>
+ <tr><td>ACOTT, Charles Frederick</td><td>1913</td><td>ARMADALE</td><td>343</td></tr>
+ <tr><td>ACTON, Anthony</td><td>1968</td><td>CASTEL FELICE</td><td>457</td></tr>
+ <tr><td>ACTON, Daphne M & Doris AR</td><td>1926</td><td>JERVIS BAY</td><td>194</td></tr>
+ <tr><td>ADAMO, Maria Antonia</td><td>1954</td><td>NEPTUNIA</td><td>188</td></tr>
+ <tr><td>ADAMO, Nicolao</td><td>1928</td><td>COMMISSAIRE RAMEL</td><td>297</td></tr>
+ <tr><td>ADAMS Geoffrey & Leonora</td><td>1976</td><td>ARCADIA</td><td>11</td></tr>
+ <tr><td>ADAMS, Agnes J & Family</td><td>1921</td><td>ZEALANDIC</td><td>364</td></tr>
+ <tr><td>ADAMS, Arthur Derrick C</td><td>1923</td><td>BALLARAT</td><td>24</td></tr>
+ <tr><td>ADAMS, Carl</td><td>1955</td><td>TOSCANA</td><td>130</td></tr>
+ <tr><td>ADAMS, Edgar AT & Alice</td><td>1907</td><td>OMRAH</td><td>414</td></tr>
+ <tr><td>ADAMS, Edith A</td><td>1912</td><td>AJANA</td><td>235</td></tr>
+ <tr><td>ADAMS, Eduard</td><td>1960</td><td>CASTEL FELICE</td><td>23</td></tr>
+ <tr><td>ADAMS, Elizabeth & Thomas</td><td>1922</td><td>HOBSONS BAY</td><td>216</td></tr>
+ <tr><td>ADAMS, Ernest Malcolm</td><td>1951</td><td>STRATHNAVER</td><td>435</td></tr>
+ <tr><td>ADAMS, Hubert & Hannelore</td><td>1960</td><td>CASTEL FELICE</td><td>23</td></tr>
+ <tr><td>ADAMS, James John</td><td>1921</td><td>ZEALANDIC</td><td>364</td></tr>
+ <tr><td>ADAMS, JC,ME, Jill & Peter</td><td>1947</td><td>STRATHEDEN</td><td>38</td></tr>
+ <tr><td>ADAMS, Les, Josie & Family</td><td>1971</td><td>BRITANIS</td><td>82</td></tr>
+ <tr><td>ADAMS, Peter John</td><td>1966</td><td>FAIRSTAR</td><td>42</td></tr>
+ <tr><td>ADAMS, Queenie CE</td><td>1912</td><td>AJANA</td><td>235</td></tr>
+ <tr><td>ADAMS, W & J, Sharan, Russ</td><td>1966</td><td>AUSTRALIS</td><td>36</td></tr>
+ <tr><td>ADAMS, W & P & C</td><td>1952</td><td>OTRANTO</td><td>6</td></tr>
+ <tr><td>ADAMS, Wesley J</td><td>1911</td><td>OPHIR</td><td>235</td></tr>
+ <tr><td>ADAMS, Wilfrid CE</td><td>1912</td><td>AJANA</td><td>235</td></tr>
+ <tr><td>ADAMS, William & Elizabeth</td><td>1830</td><td>ROCKINGHAM</td><td>194</td></tr>
+ <tr><td>ADAMSKA, Stanislawa, Danuta</td><td>1950</td><td>GENERAL W C LANGFITT</td><td>76</td></tr>
+ <tr><td>ADAMSKI, Stan & Gertrud</td><td>1950</td><td>SKAUGUM</td><td>55</td></tr>
+ <tr><td>ADASZKO, Stefan & Maria</td><td>1949</td><td>AMARAPOORA</td><td>211</td></tr>
+ <tr><td>ADBY, Michael John</td><td>1965</td><td>FAIRSKY</td><td>44</td></tr>
+ <tr><td>ADCOCK, Sydney</td><td>1911</td><td>DRESDEN</td><td>418</td></tr>
+ <tr><td>ADDENBROOKE, John Mays</td><td>1906</td><td>OROYA</td><td>398</td></tr>
+ <tr><td>ADDERLEY Family</td><td>1950</td><td>CHARON</td><td>99</td></tr>
+ <tr><td>ADDISON, George & Bunty</td><td>1953</td><td>NEW AUSTRALIA</td><td>453</td></tr>
+ <tr><td>ADDISON, Joseph</td><td>1930</td><td>BENDIGO</td><td>240</td></tr>
+ <tr><td>ADDY, Brian</td><td>1970</td><td>FAIRSTAR</td><td>147</td></tr>
+ <tr><td>ADELSON, L, F & Family</td><td>1906</td><td>OROYA</td><td>180</td></tr>
+ <tr><td>ADKINS, Ian & Elizabeth</td><td>1963</td><td>CANBERRA</td><td>69</td></tr>
+ <tr><td>ADRIAANSEN, Rienus & Jo</td><td>1953</td><td>SIBAJAK</td><td>216</td></tr>
+ <tr><td>AFFLECK, Alexander & Marion</td><td>1966</td><td>FAIRSKY</td><td>152</td></tr>
+ <tr><td>AFFLECK, Gillian I</td><td>1966</td><td>FAIRSKY</td><td>152</td></tr>
+ <tr><td>AFFLECK, Joyce C</td><td>1966</td><td>FAIRSKY</td><td>152</td></tr>
+ <tr><td>AFFLECK, R Bruce</td><td>1966</td><td>FAIRSKY</td><td>152</td></tr>
+ <tr><td>AFFOURTIT, Family</td><td>1950</td><td>VOLENDAM</td><td>28</td></tr>
+ <tr><td>RAAS, Rita & Pieter</td><td>1953</td><td>JOHAN VAN OLDENBARNEVELT</td><td>485</td></tr>
+ <tr><td>RAATS, A & MP</td><td>1955</td><td>JOHAN VAN OLDENBARNEVELT</td><td>166</td></tr>
+ <tr><td>RABBITT, Aub, Vi, Tony, Pete</td><td>1947</td><td>ORMONDE</td><td>179</td></tr>
+ <tr><td>RABEL, Winston & Crystal</td><td>1967</td><td>ORCADES</td><td>30</td></tr>
+ <tr><td>RACMAN, Ludmila</td><td>1954</td><td>OCEANIA</td><td>394</td></tr>
+ <tr><td>RACMAN, Palmira</td><td>1954</td><td>OCEANIA</td><td>394</td></tr>
+ <tr><td>RACMAN, Sandra</td><td>1954</td><td>OCEANIA</td><td>394</td></tr>
+ <tr><td>RACMAN, Vladimiro</td><td>1954</td><td>OCEANIA</td><td>394</td></tr>
+ <tr><td>RADAIC-KROVAT, Antonio</td><td>1953</td><td>OCEANIA</td><td>102</td></tr>
+ <tr><td>RADAIC-KROVAT, Antun</td><td>1937</td><td>ORMONDE</td><td>102</td></tr>
+ <tr><td>RADAIC-KROVAT, Jela</td><td>1953</td><td>OCEANIA</td><td>102</td></tr>
+ <tr><td>RADAIC-KROVAT, Marija</td><td>1953</td><td>OCEANIA</td><td>102</td></tr>
+ <tr><td>RADAIC-KROVAT, Veljko</td><td>1953</td><td>OCEANIA</td><td>102</td></tr>
+ <tr><td>RADAICH, Ivan</td><td>1937</td><td>REMO</td><td>194</td></tr>
+ <tr><td>RADALJ, Anje</td><td>1929</td><td>VILLE DE STRASBOURG</td><td>385</td></tr>
+ <tr><td>RADALJ, Ante (Tony)</td><td>1958</td><td>NEPTUNIA</td><td>64</td></tr>
+ <tr><td>RADALJ, Diana (Dianne)</td><td>1958</td><td>NEPTUNIA</td><td>49</td></tr>
+ <tr><td>RADALJ, Dinko</td><td>1959</td><td>TOSCANA</td><td>489</td></tr>
+ <tr><td>RADALJ, Dragica</td><td>1958</td><td>NEPTUNIA</td><td>51</td></tr>
+ <tr><td>RADALJ, Dragica</td><td>1961</td><td>OCEANIA</td><td>489</td></tr>
+ <tr><td>RADALJ, Jozo (Joe)</td><td>1956</td><td>TOSCANA</td><td>48</td></tr>
+ <tr><td>RADANOVICH, Lazar Simov</td><td>1901</td><td>UNKNOWN</td><td>219</td></tr>
+ <tr><td>RADBURN, Charles & Mary</td><td>1923</td><td>SOPHOCLES</td><td>ALBANY</td></tr>
+ <tr><td>RADCLIFFE, D, P & Karen</td><td>1971</td><td>ELLINIS</td><td>437</td></tr>
+ <tr><td>RADECKI, Stan & Natalie</td><td>1949</td><td>AMARAPOORA</td><td>469</td></tr>
+ <tr><td>RADEMAKERS, Peter & Anna</td><td>1956</td><td>JOHAN VAN OLDENBARNEVELT</td><td>325</td></tr>
+ <tr><td>RADETIC, Petar</td><td>1964</td><td>GUGLIELMO MARCONI</td><td>178</td></tr>
+ <tr><td>RADFORD, Arthur A</td><td>1950</td><td>EMPIRE BRENT</td><td>166</td></tr>
+ <tr><td>RADFORD, Elsie</td><td>1953</td><td>ORONTES</td><td>166</td></tr>
+ <tr><td>RADFORD, JFR</td><td>1921</td><td>ORMONDE</td><td>422</td></tr>
+ <tr><td>RADI, Pasquale</td><td>1968</td><td>ANGELINA LAURO</td><td>156</td></tr>
+ <tr><td>RADICH, Ante</td><td>1966</td><td>GUGLIELMO MARCONI</td><td>257</td></tr>
+ <tr><td>RADICH, Antica</td><td>1940</td><td>ORONSAY</td><td>215</td></tr>
+ <tr><td>RADICH, Marija</td><td>1963</td><td>FLAVIA</td><td>415</td></tr>
+ <tr><td>RADICH, Marija & Antonija</td><td>1967</td><td>ANGELINA LAURO</td><td>257</td></tr>
+ <tr><td>RADICH, Pasko & Ivan</td><td>1940</td><td>ORONSAY</td><td>215</td></tr>
+ <tr><td>RADICH, Stipan</td><td>1937</td><td>VIMINALE</td><td>102</td></tr>
+ <tr><td>RADICH, Stipan</td><td>1928</td><td>MARIA CHRISTINA</td><td>215</td></tr>
+ <tr><td>RADICI(E), Leone</td><td>1927</td><td>CITTA DI GENOVA</td><td>350</td></tr>
+ <tr><td>RADICI, Anna & Concettina</td><td>1951</td><td>ACHILLE LAURO</td><td>58</td></tr>
+ <tr><td>RADICI, Carmela</td><td>1958</td><td>OCEANIA</td><td>176</td></tr>
+ <tr><td>RADICI, Carmelo</td><td>1949</td><td>TOSCANA</td><td>112</td></tr>
+ <tr><td>RADICI, M & Family</td><td>1965</td><td>GUGLIELMO MARCONI</td><td>27</td></tr>
+ <tr><td>RADICI, Michele</td><td>1950</td><td>SEBASTIANO CABOTO</td><td>58</td></tr>
+ <tr><td>RADICI, Michele</td><td>1952</td><td>CYRENIA</td><td>350</td></tr>
+ <tr><td>RADIONOW, Ksenia & Taisa</td><td>1950</td><td>GENERAL W C LANGFITT</td><td>90</td></tr>
+ <tr><td>RADIS, Kristine & Tom</td><td>1958</td><td>NEPTUNIA</td><td>119</td></tr>
+ <tr><td>RADIS, Maria (MALCO)</td><td>1955</td><td>ARCADIA</td><td>486</td></tr>
+ <tr><td>RADIS, Panagiotis</td><td>1952</td><td>TOSCANA</td><td>486</td></tr>
+ <tr><td>RADIS, Sotiris (Sam)</td><td>1958</td><td>AURELIA</td><td>259</td></tr>
+ <tr><td>YABUKA, Luka</td><td>1907</td><td>UNKNOWN</td><td>240</td></tr>
+ <tr><td>YAKAS, Ante</td><td>1938</td><td>OTRANTO</td><td>133</td></tr>
+ <tr><td>YAKAS, Frane</td><td>1928</td><td>CAPRERA</td><td>23</td></tr>
+ <tr><td>YAKAS, Maria</td><td>1936</td><td>ORONSAY</td><td>23</td></tr>
+ <tr><td>YAKOVINA, Ante Martinev</td><td>1926</td><td>VILLE DE VERDUN</td><td>314</td></tr>
+ <tr><td>YARNOLD, Connie & Norah</td><td>1928</td><td>BENDIGO</td><td>480</td></tr>
+ <tr><td>YARROW, B, A & Family</td><td>1975</td><td>AUSTRALIS</td><td>185</td></tr>
+ <tr><td>YATES Family</td><td>1968</td><td>FAIRSEA</td><td>193</td></tr>
+ <tr><td>YATES, Alison MF</td><td>1950</td><td>STRATHAIRD</td><td>298</td></tr>
+ <tr><td>YATES, Anne</td><td>1955</td><td>ORSOVA</td><td>350</td></tr>
+ <tr><td>YATES, Brenda</td><td>1969</td><td>FAIRSKY</td><td>303</td></tr>
+ <tr><td>YATES, Capt John W W</td><td>1911</td><td>EARNOCK</td><td>14</td></tr>
+ <tr><td>YATES, Catherine</td><td>1969</td><td>FAIRSKY</td><td>303</td></tr>
+ <tr><td>YATES, Eric & Heather</td><td>1957</td><td>STRATHNAVER</td><td>158</td></tr>
+ <tr><td>YATES, F, M & Family</td><td>1923</td><td>THEMISTOCLES</td><td>ALBANY</td></tr>
+ <tr><td>YATES, Gerard Charles</td><td>1959</td><td>FAIRSKY</td><td>350</td></tr>
+ <tr><td>YATES, John C & Margaret H</td><td>1962</td><td>FAIRSKY</td><td>350</td></tr>
+ <tr><td>YATES, Mary</td><td>1953</td><td>CHITRAL</td><td>350</td></tr>
+ <tr><td>YATES, Peter</td><td>1969</td><td>FAIRSKY</td><td>303</td></tr>
+ <tr><td>YATES, Robert DM</td><td>1953</td><td>MOOLTAN</td><td>273</td></tr>
+ <tr><td>YATES, Walter Percy</td><td>1912</td><td>UNKNOWN</td><td>298</td></tr>
+ <tr><td>YATES, William James</td><td>1969</td><td>FAIRSKY</td><td>107</td></tr>
+ <tr><td>YEARDLEY Family</td><td>1972</td><td>FAIRSTAR</td><td>112</td></tr>
+ <tr><td>YEATMAN, Brenda & Sheila</td><td>1951</td><td>STRATHEDEN</td><td>155</td></tr>
+ <tr><td>YEATMAN, Mary & Valerie</td><td>1951</td><td>STRATHEDEN</td><td>155</td></tr>
+ <tr><td>YEATMAN, Stanley & Norma</td><td>1951</td><td>STRATHEDEN</td><td>155</td></tr>
+ <tr><td>YEATS, Frank</td><td>1964</td><td>CANBERRA</td><td>76</td></tr>
+ <tr><td>YELAS, Nikola</td><td>1924</td><td>VILLE DE VERDUN</td><td>323</td></tr>
+ <tr><td>YELCICH, Karmela</td><td>1938</td><td>REMO</td><td>136</td></tr>
+ <tr><td>YELCICH, Mande</td><td>1938</td><td>REMO</td><td>136</td></tr>
+ <tr><td>YELCICH, Maurie</td><td>1938</td><td>REMO</td><td>136</td></tr>
+ <tr><td>YELVERTON, Henry John</td><td>1841</td><td>UNKNOWN</td><td>83</td></tr>
+ <tr><td>YENDLE, PA & ADM</td><td>1972</td><td>GUGLIELMO MARCONI</td><td>274</td></tr>
+ <tr><td>YEOMAN, Christopher</td><td>1910</td><td>OPHIR</td><td>105</td></tr>
+ <tr><td>YEOMAN, Ellen, Helen, B & C</td><td>1910</td><td>OPHIR</td><td>318</td></tr>
+ <tr><td>YEOMAN, John, Pat & Seth</td><td>1968</td><td>FAIRSKY</td><td>28</td></tr>
+ <tr><td>YEOMANS, Charles and Jane</td><td>1927</td><td>ORMONDE</td><td>82</td></tr>
+ <tr><td>YEOMANS, JH, MA & WJ</td><td>1910</td><td>UNKNOWN</td><td>147</td></tr>
+ <tr><td>YEREMICH, John</td><td>1960</td><td>TOSCANA</td><td>173</td></tr>
+ <tr><td>YERKOVICH, Marija</td><td>1935</td><td>ORAMA</td><td>189</td></tr>
+ <tr><td>YERKOVICH, Petar</td><td>1927</td><td>UNKNOWN</td><td>111</td></tr>
+ <tr><td>YETTIE, Ivy, Mary & Family</td><td>1954</td><td>STRATHEDEN</td><td>359</td></tr>
+ <tr><td>YLIOFF, Nestor & Menka</td><td>1928</td><td>COMMISSAIRE RAMEL</td><td>103</td></tr>
+ <tr><td>YLIOFF, Peter & Vanca</td><td>1955</td><td>OCEANIA</td><td>103</td></tr>
+ <tr><td>YLIOFF, Terry P</td><td>1955</td><td>OCEANIA</td><td>244</td></tr>
+ <tr><td>YONGE, Brian & Ursula</td><td>1963</td><td>ORIANA</td><td>177</td></tr>
+ <tr><td>YORDANOFF, Minka</td><td>1935</td><td>REMO</td><td>43</td></tr>
+ <tr><td>YORDANOFF, Stoian</td><td>1929</td><td>ORONTES</td><td>42</td></tr>
+ <tr><td>YORK, Ellen M & Hilda</td><td>1929</td><td>LARGS BAY</td><td>226</td></tr>
+ <tr><td>YORK, GH (Harry)</td><td>1909</td><td>RUNIC</td><td>ALBANY</td></tr>
+</tbody></table>
+    </div>
+
+    </div>
+    
+
+
+<hr>
+
+
+
+
+    </div>
+  </div>
+
+<script type="text/javascript" src="search.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+
+    
+    $(function () {
+    $( '#table' ).searchable({
+        striped: true,
+        oddRow: { 'background-color': '#f5f5f5' },
+        evenRow: { 'background-color': '#fff' },
+        searchType: 'default'
+    });
+
+
+
+    $( '#names' ).searchable({
+        striped: true,
+        oddRow: { 'background-color': '#f5f5f5' },
+        evenRow: { 'background-color': '#fff' },
+        searchType: 'fuzzy'
+    });
+
+
+    
+    $( '#searchable-container' ).searchable({
+        searchField: '#container-search',
+        selector: '.row',
+        childSelector: '.col-xs-4',
+        show: function( elem ) {
+            elem.slideDown(100);
+        },
+        hide: function( elem ) {
+            elem.slideUp( 100 );
+        }
+    })
+});
+</script>
+
+
+<textarea id="keyboard" placeholder="Enter Text..."></textarea>	
+
+
+<script type="text/javascript">
+	$('.keyboard').keyboard({
+
+  // set this to ISO 639-1 language code to override language set by the layout
+  // http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+  // language defaults to "en" if not found
+  language     : null,  // string or array
+  rtl          : false, // language direction right-to-left
+
+  // *** choose layout ***
+  layout       : 'qwerty',
+  customLayout : { 'normal': ['{cancel}'] },
+
+  position     : {
+    // optional - null (attach to input/textarea) or a jQuery object
+    // (attach elsewhere)
+    of : null,
+    my : 'center top',
+    at : 'center top',
+    // used when "usePreview" is false
+    // (centers keyboard at bottom of the input/textarea)
+    at2: 'center bottom'
+  },
+
+  // allow jQuery position utility to reposition the keyboard on window resize
+  reposition   : true,
+
+  // preview added above keyboard if true, original input/textarea used if false
+  usePreview   : true,
+
+  // if true, the keyboard will always be visible
+  alwaysOpen   : false,
+
+  // give the preview initial focus when the keyboard becomes visible
+  initialFocus : true,
+  // Avoid focusing the input the keyboard is attached to
+  noFocus: false,
+
+  // if true, keyboard will remain open even if the input loses focus.
+  stayOpen     : false,
+
+  // if true, keyboard will not close if you press escape.
+  ignoreEsc: false,
+
+  // *** change keyboard language & look ***
+  display : {
+    // \u2714 = check mark - same action as accept
+    'a'      : '\u2714:Accept (Shift-Enter)',
+    'accept' : 'Accept:Accept (Shift-Enter)',
+    'alt'    : 'AltGr:Alternate Graphemes',
+    // \u232b = outlined left arrow with x inside
+    'b'      : '\u232b:Backspace',
+    'bksp'   : 'Bksp:Backspace',
+    // \u2716 = big X, close - same action as cancel
+    'c'      : '\u2716:Cancel (Esc)',
+    'cancel' : 'Cancel:Cancel (Esc)',
+    // clear num pad
+    'clear'  : 'C:Clear',
+    'combo'  : '\u00f6:Toggle Combo Keys',
+    // decimal point for num pad (optional);
+    // change '.' to ',' for European format
+    'dec'    : '.:Decimal',
+    // down, then left arrow - enter symbol
+    'e'      : '\u21b5:Enter',
+    'empty'  : '\u00a0', // &nbsp;
+    'enter'  : 'Enter:Enter',
+    // \u2190 = left arrow (move caret)
+    'left'   : '\u2190',
+    // caps lock
+    'lock'   : '\u21ea Lock:Caps Lock',
+    'next'   : 'Next',
+    'prev'   : 'Prev',
+    // \u2192 = right arrow (move caret)
+    'right'  : '\u2192',
+    // \u21e7 = thick hollow up arrow
+    's'      : '\u21e7:Shift',
+    'shift'  : 'Shift:Shift',
+    // \u00b1 = +/- sign for num pad
+    'sign'   : '\u00b1:Change Sign',
+    'space'  : '&nbsp;:Space',
+
+    // \u21e5 = right arrow to bar; used since this virtual
+    // keyboard works with one directional tabs
+    't'      : '\u21e5:Tab',
+    // \u21b9 is the true tab symbol (left & right arrows)
+    'tab'    : '\u21e5 Tab:Tab',
+    // replaced by an image
+    'toggle' : ' ',
+
+    // added to titles of keys
+    // accept key status when acceptValid:true
+    'valid': 'valid',
+    'invalid': 'invalid',
+    // combo key states
+    'active': 'active',
+    'disabled': 'disabled'
+  },
+
+  // Message added to the key title while hovering, if the mousewheel plugin exists
+  wheelMessage : 'Use mousewheel to see other keys',
+
+  css : {
+    // input & preview
+    input          : 'ui-widget-content ui-corner-all',
+    // keyboard container
+    container      : 'ui-widget-content ui-widget ui-corner-all ui-helper-clearfix',
+    // keyboard container extra class (same as container, but separate)
+    popup: '',
+    // default state
+    buttonDefault  : 'ui-state-default ui-corner-all',
+    // hovered button
+    buttonHover    : 'ui-state-hover',
+    // Action keys (e.g. Accept, Cancel, Tab, etc); replaces "actionClass"
+    buttonAction   : 'ui-state-active',
+    // used when disabling the decimal button {dec}
+    buttonDisabled : 'ui-state-disabled',
+    // empty button class name {empty}
+    buttonEmpty    : 'ui-keyboard-empty'
+  },
+
+  // *** Useability ***
+  // Auto-accept content when clicking outside the keyboard (popup will close)
+  autoAccept   : false,
+  // Auto-accept content even if the user presses escape
+  // (only works if `autoAccept` is `true`)
+  autoAcceptOnEsc : false,
+
+  // Prevents direct input in the preview window when true
+  lockInput    : false,
+
+  // Prevent keys not in the displayed keyboard from being typed in
+  restrictInput: false,
+  // Additional allowed characters while restrictInput is true
+  restrictInclude: '', // e.g. 'a b foo \ud83d\ude38'
+
+  // Check input against validate function, if valid the accept button
+  // is clickable; if invalid, the accept button is disabled.
+  acceptValid  : true,
+  // Auto-accept when input is valid; requires `acceptValid`
+  // set `true` & validate callback
+  autoAcceptOnValid: false,
+
+  // if acceptValid is true & the validate function returns a false, this option
+  // will cancel a keyboard close only after the accept button is pressed
+  cancelClose  : true,
+
+  // Use tab to navigate between input fields
+  tabNavigation: false,
+
+  // press enter (shift-enter in textarea) to go to the next input field
+  enterNavigation : true,
+  // mod key options: 'ctrlKey', 'shiftKey', 'altKey', 'metaKey' (MAC only)
+  // alt-enter to go to previous; shift-alt-enter to accept & go to previous
+  enterMod : 'altKey',
+
+  // if true, the next button will stop on the last keyboard input/textarea;
+  // prev button stops at first
+  // if false, the next button will wrap to target the first input/textarea;
+  // prev will go to the last
+  stopAtEnd : true,
+
+  // Set this to append the keyboard immediately after the input/textarea it
+  // is attached to. This option works best when the input container doesn't
+  // have a set width and when the "tabNavigation" option is true
+  appendLocally: false,
+
+  // Append the keyboard to a desired element. This can be a jQuery selector
+  // string or object
+  appendTo: 'body',
+
+  // If false, the shift key will remain active until the next key is (mouse)
+  // clicked on; if true it will stay active until pressed again
+  stickyShift  : true,
+
+  // caret placed at the end of any text when keyboard becomes visible
+  caretToEnd   : false,
+
+  // Prevent pasting content into the area
+  preventPaste : false,
+
+  // caret stays this many pixels from the edge of the input
+  // while scrolling left/right; use "c" or "center" to center
+  // the caret while scrolling
+  scrollAdjustment: 10,
+
+  // Set the max number of characters allowed in the input, setting it to
+  // false disables this option
+  maxLength    : false,
+
+  // allow inserting characters @ caret when maxLength is set
+  maxInsert    : true,
+
+  // Mouse repeat delay - when clicking/touching a virtual keyboard key, after
+  // this delay the key will start repeating
+  repeatDelay  : 500,
+
+  // Mouse repeat rate - after the repeatDelay, this is the rate (characters
+  // per second) at which the key is repeated. Added to simulate holding down
+  // a real keyboard key and having it repeat. I haven't calculated the upper
+  // limit of this rate, but it is limited to how fast the javascript can
+  // process the keys. And for me, in Firefox, it's around 20.
+  repeatRate   : 20,
+
+  // resets the keyboard to the default keyset when visible
+  resetDefault : false,
+
+  // Event (namespaced) on the input to reveal the keyboard. To disable it,
+  // just set it to an empty string ''.
+  openOn       : 'focus',
+
+  // When the character is added to the input
+  keyBinding   : 'mousedown',
+
+  // enable/disable mousewheel functionality
+  // enabling still depends on the mousewheel plugin
+  useWheel : true,
+
+  // combos (emulate dead keys)
+  // http://en.wikipedia.org/wiki/Keyboard_layout#US-International
+  // if user inputs `a the script converts it to à, ^o becomes ô, etc.
+  useCombos    : true,
+
+  // *** Methods ***
+  // Callbacks - add code inside any of these callback functions as desired
+  initialized   : function(e, keyboard, el) {},
+  beforeVisible : function(e, keyboard, el) {},
+  visible       : function(e, keyboard, el) {},
+  beforeInsert  : function(e, keyboard, el, textToAdd) { return textToAdd; },
+  change        : function(e, keyboard, el) {},
+  beforeClose   : function(e, keyboard, el, accepted) {},
+  accepted      : function(e, keyboard, el) {},
+  canceled      : function(e, keyboard, el) {},
+  restricted    : function(e, keyboard, el) {},
+  hidden        : function(e, keyboard, el) {},
+
+  // called instead of base.switchInput
+  switchInput   : function(keyboard, goToNext, isAccepted) {},
+
+  // used if you want to create a custom layout or modify the built-in keyboard
+  create        : function(keyboard) { return keyboard.buildKeyboard(); },
+
+  // build key callback (individual keys)
+  buildKey : function( keyboard, data ) {
+    /*
+    data = {
+      // READ ONLY
+      // true if key is an action key
+      isAction : [boolean],
+      // key class name suffix ( prefix = 'ui-keyboard-' ); may include
+      // decimal ascii value of character
+      name     : [string],
+      // text inserted (non-action keys)
+      value    : [string],
+      // title attribute of key
+      title    : [string],
+      // keyaction name
+      action   : [string],
+      // HTML of the key; it includes a <span> wrapping the text
+      html     : [string],
+      // jQuery selector of key which is already appended to keyboard
+      // use to modify key HTML
+      $key     : [object]
+    }
+    */
+    return data;
+  },
+
+  // this callback is called just before the "beforeClose" to check the value
+  // if the value is valid, return true and the keyboard will continue as it
+  // should (close if not always open, etc)
+  // if the value is not value, return false and the clear the keyboard value
+  // ( like this "keyboard.$preview.val('');" ), if desired
+  // The validate function is called after each input, the "isClosing" value
+  // will be false; when the accept button is clicked, "isClosing" is true
+  validate    : function(keyboard, value, isClosing) {
+    return true;
+  }
+
+});
+
+
+</script>
+</body>
+</html>

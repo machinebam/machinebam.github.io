@@ -1,0 +1,16 @@
+html, body {font-family: sans-serif;}
+
+
+.navbar-default {
+    background-color: #fffa6b;
+    border:none;
+    padding: 2rem 0;
+}
+
+.btn {border:none;}
+
+tr {display: none;}
+tr td:last-child {font-weight: bold;}
+
+thead tr{display: table-row;}
+
